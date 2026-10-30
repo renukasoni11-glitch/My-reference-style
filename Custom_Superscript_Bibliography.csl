@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
+  <info>
+    <title>Custom Superscript - Authors, Journal, Year, Bold Volume, Pages, DOI</title>
+    <id>http://www.zotero.org/styles/custom-superscript-authors-journal-year-volume-pages-doi</id>
+    <link href="http://www.zotero.org/styles/custom-superscript-authors-journal-year-volume-pages-doi" rel="self"/>
+    <category citation-format="numeric"/>
+    <summary>Superscript numeric citations; bibliography lists all authors, italic journal title, year, bold volume, pages or article number, and DOI when available.</summary>
+    <updated>2026-10-30T00:00:00+00:00</updated>
+  </info>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout vertical-align="sup" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography et-al-min="999" et-al-use-first="999" second-field-align="flush">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout suffix=".">
+      <group delimiter=", ">
+        <names variable="author" delimiter=", " delimiter-precedes-last="never" et-al-min="999" et-al-use-first="999">
+          <name form="long" initialize-with=". " name-as-sort-order="all" sort-separator=" "/>
+          <substitute>
+            <names variable="editor"/>
+            <text variable="title"/>
+          </substitute>
+        </names>
+        <text variable="container-title" font-style="italic"/>
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+        <text variable="volume" font-weight="bold"/>
+        <choose>
+          <if variable="page">
+            <text variable="page"/>
+          </if>
+          <else-if variable="article-number">
+            <text variable="article-number"/>
+          </else-if>
+          <else-if variable="number">
+            <text variable="number"/>
+          </else-if>
+        </choose>
+      </group>
+      <choose>
+        <if variable="DOI">
+          <text value="https://doi.org/" prefix=" "/>
+          <text variable="DOI"/>
+        </if>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
