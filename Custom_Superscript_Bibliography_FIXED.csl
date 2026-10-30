@@ -1,15 +1,17 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl"
        version="1.0"
        class="in-text"
        default-locale="en-US">
+
   <info>
     <title>Custom Research Style - Superscript with Article Title</title>
-    <id>http://www.zotero.org/styles/custom-research-superscript-article-title</id>
+    <id>http://csl.mendeley.com/styles/863803231/renuka</id>
     <link href="http://www.zotero.org/styles/custom-research-superscript-article-title" rel="self"/>
     <category citation-format="numeric"/>
     <summary>Superscript numeric citations; all authors, article title, italic journal, year, bold volume, pages and optional DOI.</summary>
-    <updated>2026-10-30T00:00:00+00:00</updated>
+    <updated>2026-10-30T14:28:58+00:00</updated>
   </info>
 
   <citation collapse="citation-number">
@@ -28,31 +30,37 @@
     <layout suffix=".">
       <text variable="citation-number" suffix=". "/>
       <group delimiter=", ">
-        <names variable="author"
-               delimiter=", "
-               and="text"
-               delimiter-precedes-last="never"
-               et-al-min="999"
-               et-al-use-first="999">
-          <name initialize-with=". "/>
+
+        <names variable="author" delimiter=", ">
+          <name initialize-with=". "
+                and="text"
+                delimiter-precedes-last="never"
+                et-al-min="999"
+                et-al-use-first="999"/>
           <substitute>
             <names variable="editor"/>
             <text variable="title"/>
           </substitute>
         </names>
+
         <text variable="title"/>
         <text variable="container-title" font-style="italic"/>
+
         <date variable="issued">
           <date-part name="year"/>
         </date>
+
         <text variable="volume" font-weight="bold"/>
         <text variable="page"/>
+
         <choose>
           <if variable="DOI">
             <text variable="DOI" prefix="https://doi.org/"/>
           </if>
         </choose>
+
       </group>
     </layout>
   </bibliography>
+
 </style>
