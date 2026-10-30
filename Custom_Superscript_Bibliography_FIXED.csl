@@ -1,19 +1,20 @@
 
-<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl"
        version="1.0"
        class="in-text"
        default-locale="en-US">
 
   <info>
-    <title>Custom Research Style - Superscript with Article Title</title>
-    <id>http://csl.mendeley.com/styles/863803231/renuka</id>
-    <link href="http://www.zotero.org/styles/custom-research-superscript-article-title" rel="self"/>
+    <title>Renuka Custom Superscript Bibliography</title>
+    <id>http://www.zotero.org/styles/renuka-custom-superscript</id>
+    <link href="http://www.zotero.org/styles/renuka-custom-superscript" rel="self"/>
     <category citation-format="numeric"/>
-    <summary>Superscript numeric citations; all authors, article title, italic journal, year, bold volume, pages and optional DOI.</summary>
-    <updated>2026-10-30T14:28:58+00:00</updated>
+    <category field="chemistry"/>
+    <summary>Superscript numerical citations with complete author names, article title, journal, year, volume, pages and DOI.</summary>
+    <updated>2026-10-30T00:00:00+00:00</updated>
   </info>
 
+  <!-- IN-TEXT CITATIONS -->
   <citation collapse="citation-number">
     <sort>
       <key variable="citation-number"/>
@@ -23,14 +24,18 @@
     </layout>
   </citation>
 
+  <!-- BIBLIOGRAPHY -->
   <bibliography>
     <sort>
       <key variable="citation-number"/>
     </sort>
+
     <layout suffix=".">
       <text variable="citation-number" suffix=". "/>
+
       <group delimiter=", ">
 
+        <!-- AUTHORS -->
         <names variable="author" delimiter=", ">
           <name initialize-with=". "
                 and="text"
@@ -43,16 +48,24 @@
           </substitute>
         </names>
 
+        <!-- ARTICLE TITLE -->
         <text variable="title"/>
+
+        <!-- JOURNAL NAME -->
         <text variable="container-title" font-style="italic"/>
 
+        <!-- YEAR -->
         <date variable="issued">
           <date-part name="year"/>
         </date>
 
+        <!-- VOLUME -->
         <text variable="volume" font-weight="bold"/>
+
+        <!-- PAGE NUMBERS -->
         <text variable="page"/>
 
+        <!-- DOI -->
         <choose>
           <if variable="DOI">
             <text variable="DOI" prefix="https://doi.org/"/>
